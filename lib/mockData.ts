@@ -1,0 +1,8 @@
+import { Opportunity, SubmissionRecord } from "./types";
+import { scoreOpportunity } from "./scorer";
+export const mockOpportunities: Opportunity[] = [
+ scoreOpportunity({ noticeId:"SAMSOS-AI-001", title:"AI Public Data Prototype and Technical Reporting Support", agency:"Department of Commerce / Demo", description:"Seeking small business support for artificial intelligence, public data, dashboards, software prototyping, and economic development technical assistance.", deadline:"2026-05-31", postedDate:"2026-04-12", url:"https://sam.gov", type:"Sources Sought", naicsCode:"541715", setAside:"Small Business" }),
+ scoreOpportunity({ noticeId:"SAMSOS-CYBER-002", title:"Cybersecurity Research Automation Workflow", agency:"DHS / Demo", description:"Research and development support for cybersecurity automation and technical reporting.", deadline:"2026-06-15", postedDate:"2026-04-18", url:"https://sam.gov", type:"Solicitation", naicsCode:"541519" }),
+ scoreOpportunity({ noticeId:"SAMSOS-EDU-003", title:"Education Technology Data Dashboard", agency:"Department of Education / Demo", description:"Education technology dashboard for public-interest analytics and reporting.", deadline:"2026-07-01", postedDate:"2026-04-22", url:"https://sam.gov", type:"Notice", naicsCode:"541511" })
+];
+export const mockSubmissions: SubmissionRecord[] = [{ noticeId:"SAMSOS-AI-001", title:"AI Public Data Prototype and Technical Reporting Support", agency:"Department of Commerce / Demo", priority:"P0", score:97, status:"identified", deadline:"2026-05-31", createdAt:new Date().toISOString(), updatedAt:new Date().toISOString(), nextAction:"Generate requirements checklist and submission procedure." }];

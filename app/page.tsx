@@ -1,0 +1,6 @@
+import Link from "next/link";
+import { getOpportunities, getSubmissions } from "@/lib/store";
+export default function HomePage() {
+  const opps = getOpportunities(); const submissions = getSubmissions(); const p0 = opps.filter(o=>o.priority==="P0").length;
+  return <div><section className="hero"><span className="badge">Saga Dog Corp</span><h1>SAMSOS Federal Opportunity Operating System</h1><p className="muted">Vercel-hosted SAM.gov discovery, priority ranking, proposal drafting, and submission tracking.</p><div className="actions"><Link className="btn" href="/opportunities">View Opportunities</Link><Link className="btn secondary" href="/submissions">Track Submissions</Link></div></section><section className="grid" style={{marginTop:20}}><div className="card"><h2>{opps.length}</h2><p className="muted">Tracked opportunities</p></div><div className="card"><h2>{p0}</h2><p className="muted">P0 priority items</p></div><div className="card"><h2>{submissions.length}</h2><p className="muted">Submission records</p></div></section><section className="card" style={{marginTop:20}}><h2>Execution Model</h2><p className="muted">Fetch → Rank → Requirements → Procedure → Proposal → Submission Tracking → Monthly Report</p></section></div>;
+}
